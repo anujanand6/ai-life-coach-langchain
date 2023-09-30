@@ -2,15 +2,14 @@ import utils
 import streamlit as st
 from streaming import StreamHandler
 
-# from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
-st.set_page_config(page_title="Context aware chatbot", page_icon="⭐")
-st.header('Context aware chatbot')
-st.write('Enhancing Chatbot Interactions through Context Awareness')
-st.write('[![view source code ](https://img.shields.io/badge/view_source_code-gray?logo=github)](https://github.com/shashankdeshpande/langchain-chatbot/blob/master/pages/2_%E2%AD%90_context_aware_chatbot.py)')
+st.set_page_config(page_title="Physical Fitness Coach", page_icon="🏃🏽")
+st.header('Physical Fitness Coach')
+st.write('Workout plans, meal plans and more...')
+st.write('[![view source code ](https://img.shields.io/badge/view_source_code-gray?logo=github)]()')
 
 class ContextChatbot:
 
