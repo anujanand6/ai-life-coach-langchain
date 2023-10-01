@@ -21,7 +21,7 @@ Here are a few coaches implemented so far:
 
 ## <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" width="40" height="22"> Streamlit App
 Created a multi-page streamlit app containing chatbots that act as life coaches. \
-You can access this app through this link: [wisemind-ai.streamlit.app](https://wisemind.streamlit.app/)
+You can access this app through this link: [wisemind.streamlit.app](https://wisemind.streamlit.app/)
 
 ## 🖥️ Running locally
 ```shell
