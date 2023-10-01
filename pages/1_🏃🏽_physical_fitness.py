@@ -6,6 +6,8 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
+from promptTemplates import fitness_template
+
 st.set_page_config(page_title="Physical Fitness Coach", page_icon="🏃🏽")
 st.header('Physical Fitness Coach')
 st.write('Workout plans, meal plans and more...')
@@ -21,7 +23,7 @@ class ContextChatbot:
     def setup_chain(_self):
         memory = ConversationBufferMemory()
         llm = ChatOpenAI(model_name=_self.openai_model, temperature=0.5, streaming=True)
-        chain = ConversationChain(llm=llm, memory=memory, verbose=True)
+        chain = ConversationChain(llm=llm, prompt=fitness_template, memory=memory, verbose=True)
         return chain
     
     @utils.enable_chat_history
