@@ -8,6 +8,7 @@ def enable_chat_history(func):
 
         # to clear chat history after swtching chatbot
         current_page = func.__qualname__
+        print('current_page', current_page)
         if "current_page" not in st.session_state:
             st.session_state["current_page"] = current_page
         if st.session_state["current_page"] != current_page:
