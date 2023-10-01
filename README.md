@@ -1,6 +1,6 @@
 # WiseMind AI: AI-powered Life Coach app built using Langchain and Streamlit [Under development]
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-life-coach.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://wisemind-ai.streamlit.app/)
 
 Welcome to WiseMind AI!
 
@@ -21,7 +21,7 @@ Here are a few coaches implemented so far:
 
 ## <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" width="40" height="22"> Streamlit App
 Created a multi-page streamlit app containing chatbots that act as life coaches. \
-You can access this app through this link: [ai-life-coach.streamlit.app](https://ai-life-coach.streamlit.app/)
+You can access this app through this link: [wisemind-ai.streamlit.app](https://wisemind-ai.streamlit.app/)
 
 ## 🖥️ Running locally
 ```shell
