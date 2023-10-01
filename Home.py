@@ -21,7 +21,7 @@ st.write("""
          Welcome to your next-level life coaching experience!
 
          Please note: 
-         - This app is for experimental and project purposes only and is not intended to replace professional 
+         - This app is for experimental purposes only and is not intended to replace professional 
          advice. 
          - Your privacy is paramount; we don't collect any personal information, ensuring a completely anonymous 
          experience.

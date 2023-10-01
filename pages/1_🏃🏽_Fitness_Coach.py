@@ -10,7 +10,7 @@ from promptTemplates import fitness_template
 
 st.set_page_config(page_title="Fitness Coach", page_icon="🏃🏽")
 st.header('Fitness Coach')
-st.write('Workout plans, meal plans and more...')
+st.write('Ask Rocky anthying related to fitness such as creating workout plans, meal plans, and much more!')
 st.write('[![view source code ](https://img.shields.io/badge/view_source_code-gray?logo=github)](https://github.com/anujanand6/ai-life-coach-langchain/blob/main/pages/1_%F0%9F%8F%83%F0%9F%8F%BD_physical_fitness.py)')
 
 class FitnessCoach:

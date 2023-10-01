@@ -10,7 +10,7 @@ from promptTemplates import relationship_template
 
 st.set_page_config(page_title="Relationship Coach", page_icon="🫂")
 st.header('Relationship Coach')
-st.write('.......')
+st.write('Navigate emotional and relational challenges with insights from Emma!')
 st.write('[![view source code ](https://img.shields.io/badge/view_source_code-gray?logo=github)](https://github.com/anujanand6/ai-life-coach-langchain/blob/main/pages/1_%F0%9F%8F%83%F0%9F%8F%BD_physical_fitness.py)')
 
 class RelationshipCoach:

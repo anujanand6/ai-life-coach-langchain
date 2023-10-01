@@ -1,4 +1,4 @@
-# WiseMind AI: AI-powered Life Coach app built using Langchain and Streamlit [Under development]
+# WiseMind AI: GPT-powered Life Coach app built using Langchain and Streamlit [Under development]
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://wisemind-ai.streamlit.app/)
 
