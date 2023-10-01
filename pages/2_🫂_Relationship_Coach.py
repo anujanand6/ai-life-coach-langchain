@@ -6,6 +6,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
+from config import OPENAI_MODEL, TEMPERATURE
 from promptTemplates import relationship_template
 
 st.set_page_config(page_title="Relationship Coach", page_icon="🫂")
@@ -17,13 +18,23 @@ class RelationshipCoach:
 
     def __init__(self):
         utils.configure_openai_api_key()
-        self.openai_model = "gpt-3.5-turbo"
+        self.openai_model = OPENAI_MODEL
+        self.temp = TEMPERATURE
     
     @st.cache_resource
     def setup_chain(_self):
         memory = ConversationBufferMemory()
-        llm = ChatOpenAI(model_name=_self.openai_model, temperature=0.5, streaming=True)
-        chain = ConversationChain(llm=llm, prompt=relationship_template, memory=memory, verbose=True)
+        llm = ChatOpenAI(
+            model_name=_self.openai_model, 
+            temperature=_self.temp, 
+            streaming=True
+            )
+        chain = ConversationChain(
+            llm=llm, 
+            prompt=relationship_template, 
+            memory=memory, 
+            verbose=True
+            )
         return chain
     
     @utils.enable_chat_history
