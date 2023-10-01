@@ -1,6 +1,9 @@
 import os
 import random
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
 
 #decorator
 def enable_chat_history(func):
@@ -39,17 +42,30 @@ def display_msg(msg, author):
     st.chat_message(author).write(msg)
 
 def configure_openai_api_key():
-    openai_api_key = st.sidebar.text_input(
-        label="OpenAI API Key",
-        type="password",
-        value=st.session_state['OPENAI_API_KEY'] if 'OPENAI_API_KEY' in st.session_state else '',
-        placeholder="sk-..."
-        )
+    # st.info("Loading OpenAI API key...")
+    openai_api_key = os.getenv('OPENAI_API_KEY')
+
+    # Load OpenAI API key if provided in .env file
     if openai_api_key:
         st.session_state['OPENAI_API_KEY'] = openai_api_key
         os.environ['OPENAI_API_KEY'] = openai_api_key
+        # st.info("Successfully loaded OpenAI API key...")
+        pass
+    
+    # Else provide key in Streamlit
     else:
-        st.error("Please add your OpenAI API key to continue.")
-        st.info("Obtain your key from this link: https://platform.openai.com/account/api-keys")
-        st.stop()
-    return openai_api_key
+        openai_api_key = st.sidebar.text_input(
+            label="OpenAI API Key",
+            type="password",
+            value=st.session_state['OPENAI_API_KEY'] if 'OPENAI_API_KEY' in st.session_state else '',
+            placeholder="sk-..."
+            )
+        if openai_api_key:
+            st.session_state['OPENAI_API_KEY'] = openai_api_key
+            os.environ['OPENAI_API_KEY'] = openai_api_key
+        else:
+            st.error("Please add your OpenAI API key to continue.")
+            st.info("Obtain your key from this link: https://platform.openai.com/account/api-keys")
+            st.stop()
+        return openai_api_key
+    return
