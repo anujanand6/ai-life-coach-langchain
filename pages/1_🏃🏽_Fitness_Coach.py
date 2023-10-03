@@ -6,7 +6,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
-from config import OPENAI_MODEL, TEMPERATURE
+from config import OPENAI_MODEL_CONFIG
 from promptTemplates import fitness_template
 
 st.set_page_config(page_title="Fitness Coach", page_icon="🏃🏽")
@@ -18,8 +18,8 @@ class FitnessCoach:
 
     def __init__(self):
         utils.configure_openai_api_key()
-        self.openai_model = OPENAI_MODEL
-        self.temp = TEMPERATURE
+        self.openai_model = OPENAI_MODEL_CONFIG['model_name']
+        self.temp = OPENAI_MODEL_CONFIG['temperature']
     
     @st.cache_resource
     def setup_chain(_self):

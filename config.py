@@ -1,5 +1,5 @@
-# OpenAI model to use
-OPENAI_MODEL = "gpt-3.5-turbo"
-
-# Temprature of model
-TEMPERATURE = 0.5
+# OpenAI model configs
+OPENAI_MODEL_CONFIG = {
+    "model_name": "gpt-4",
+    "temperature": 0.7
+}
