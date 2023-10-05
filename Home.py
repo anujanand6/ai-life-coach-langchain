@@ -12,17 +12,17 @@ st.write("""
 """)
 
 st.write("""
-         Welcome to WiseMind AI!
-
-         Discover **Rocky** and **Emma**, your new AI-powered companions! Customize the personality of each coach to 
-         whom you like! Dive into personalized fitness and nutrition plans with Rocky's unique blend of expertise 
-         and Kevin Hart's vivacious energy or Rocky Balboa's verocity. Explore the depths of your emotions and
-         relationships under the wise and nurturing guidance of Emma, echoing the warmth of someone like Oprah Winfrey, 
-         Ellen DeGeneres or even Master Yoda!. Unlock a transformative journey tailored by you and just for you. Embark 
-         on a chat, embrace change, and enrich your life. 
+         Welcome to WiseMind AI, your next-level life coaching experience!
          
-         Welcome to your next-level life coaching experience!
+         Meet **Rocky** and **Emma**—your lively AI buddies tailored to vibe with your unique persona. 
+         Step into a world of bespoke fitness and nutrition with Rocky, channeling the spirited zest 
+         of Kevin Hart or the iron grit of Rocky Balboa to fuel your fire. Delve into the heart of your 
+         emotions and relationships alongside Emma, whose gentle wisdom resonates with the likes of Oprah, 
+         Ellen, or even Master Yoda! 
+         
+         Your chat with change begins here, in a realm where self-growth is a journey molded by you, for you.
 
+         
          Please note: 
          - This app is for experimental and academic purposes only and is not intended to replace professional 
          advice. 
