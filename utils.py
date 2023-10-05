@@ -6,9 +6,10 @@ def enable_chat_history(func):
     if os.environ.get("OPENAI_API_KEY"):
         # Clear chat history after switching coaches
         current_page = func.__qualname__
-        # print('Current page:', current_page, '\n')
+        # print('\nCurrent page:', current_page)
         if "current_page" not in st.session_state:
             st.session_state["current_page"] = current_page
+            # print('Session state current page:', st.session_state["current_page"], '\n')
         if st.session_state["current_page"] != current_page:
             try:
                 st.cache_resource.clear()
@@ -19,9 +20,8 @@ def enable_chat_history(func):
 
         # Display chat history on ui
         if "messages" not in st.session_state:
-            st.session_state["messages"] = [{
-                "role": "assistant", 
-                "content": "Welcome to WiseMind AI!"}]
+            display_welcome_msg()
+
         for msg in st.session_state["messages"]:
             st.chat_message(msg["role"]).write(msg["content"])
 
@@ -36,8 +36,20 @@ def display_msg(msg, author):
         msg (str): message to display
         author (str): author of the message -user/assistant
     """
+    # Temporary fix for "messages" key error (after refresh)
+    if "messages" not in st.session_state:
+        display_welcome_msg()
     st.session_state.messages.append({"role": author, "content": msg})
     st.chat_message(author).write(msg)
+    pass
+
+def display_welcome_msg():
+    st.session_state["messages"] = [{
+        "role": "assistant", "content": "Welcome to WiseMind AI!"
+        }]
+    for msg in st.session_state["messages"]:
+        st.chat_message(msg["role"]).write(msg["content"])
+    pass
 
 def configure_openai_api_key():
     try:
