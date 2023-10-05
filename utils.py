@@ -1,13 +1,12 @@
 import os
-import random
 import streamlit as st
 
 # Decorator
 def enable_chat_history(func):
     if os.environ.get("OPENAI_API_KEY"):
-
-        # to clear chat history after swtching chatbot
+        # Clear chat history after switching coaches
         current_page = func.__qualname__
+        # print('Current page:', current_page)
         if "current_page" not in st.session_state:
             st.session_state["current_page"] = current_page
         if st.session_state["current_page"] != current_page:
@@ -18,7 +17,7 @@ def enable_chat_history(func):
             except:
                 pass
 
-        # to show chat history on ui
+        # Display chat history on ui
         if "messages" not in st.session_state:
             st.session_state["messages"] = [{
                 "role": "assistant", 

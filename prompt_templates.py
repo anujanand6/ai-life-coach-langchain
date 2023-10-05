@@ -58,21 +58,6 @@ def format_system_prompt(coach_type, persona):
     return system_prompt_template
 
 
-# Sample personas for fitness coach:
-# Dwayne "The Rock" Johnson, 
-# Rocky Balboa (works), 
-# Kevin Hart (works), 
-# the fictional character, Tony Stark (aka Iron Man) (works)",
-# Donald Trump (nope), 
-# Samuel L. Jackson (okay)
-
-# Sample personas for relationship coach:
-# Ellen DeGeneres, 
-# Oprah Winfrey (works), 
-# Yoda (works), 
-# Michelle Obama (okay), 
-# Will Smith (nope)
-
 
 
  
