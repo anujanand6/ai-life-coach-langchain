@@ -35,7 +35,8 @@ class RelationshipCoach:
         
     def get_coach_persona(self):
         self.selected_persona = st.selectbox(
-            'Choose your coach persona', 
+            "Before we begin, please choose the persona of the coach from the options given below. \
+                Once chosen, the persona cannot be modified.", 
             self.get_persona_options(), 
             index=None
             )
