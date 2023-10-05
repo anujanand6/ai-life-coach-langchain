@@ -6,7 +6,6 @@ st.write('Navigate emotional and relational challenges with insights from Emma!'
 
 from CoachModels.RelationshipCoachModel import RelationshipCoach
 
-
 if __name__ == "__main__":
     coach = RelationshipCoach()
     persona = coach.get_coach_persona()
