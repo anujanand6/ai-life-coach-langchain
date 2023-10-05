@@ -2,7 +2,6 @@
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://wisemind.streamlit.app/)
 
-"""
 Welcome to WiseMind AI, your next-level life coaching experience!
 
 Meet **Rocky** and **Emma**—your lively AI buddies tailored to vibe with your unique persona.
@@ -10,7 +9,6 @@ Meet **Rocky** and **Emma**—your lively AI buddies tailored to vibe with your 
 Step into a world of bespoke fitness and nutrition with Rocky, channeling the spirited zest of Kevin Hart or the iron grit of Rocky Balboa to fuel your fire. Delve into the heart of your emotions and relationships alongside Emma, whose gentle wisdom resonates with the likes of Oprah, Ellen, or even Master Yoda! 
 
 Your chat with change begins here, in a realm where self-growth is a journey molded by you, for you.
-"""
 
 ## 💬 Life coaches
 Here are a few coaches implemented so far:
