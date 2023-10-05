@@ -17,7 +17,6 @@ class RelationshipCoach:
             self.openai_model = OPENAI_MODEL_CONFIG['model_name']
             self.temp = COACH_CONFIG[self.coach_type]['model_temperature']
     
-    @st.cache_resource
     def setup_chain(_self, _prompt_template):
         memory = ConversationBufferMemory()
         llm = ChatOpenAI(
