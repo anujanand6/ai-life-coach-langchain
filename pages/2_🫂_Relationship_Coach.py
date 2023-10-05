@@ -5,7 +5,8 @@ st.header('Relationship Coach')
 st.write('Navigate emotional and relational challenges with insights from Emma!')
 st.write('[![view source code ](https://img.shields.io/badge/view_source_code-gray?logo=github)](https://github.com/anujanand6/ai-life-coach-langchain/blob/main/pages/2_%F0%9F%AB%82_Relationship_Coach.py)')
 
-from CoachModels import RelationshipCoach
+from CoachModels.RelationshipCoachModel import RelationshipCoach
+
 
 if __name__ == "__main__":
     coach = RelationshipCoach()

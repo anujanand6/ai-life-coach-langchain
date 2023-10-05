@@ -5,7 +5,7 @@ st.header('Fitness Coach')
 st.write('Ask Rocky anthying related to fitness such as creating workout plans, meal plans, and much more!')
 st.write('[![view source code ](https://img.shields.io/badge/view_source_code-gray?logo=github)](https://github.com/anujanand6/ai-life-coach-langchain/blob/main/pages/1_%F0%9F%8F%83%F0%9F%8F%BD_Fitness_Coach.py)')
 
-from CoachModels import FitnessCoach
+from CoachModels.FitnessCoachModel import FitnessCoach
 
 if __name__ == "__main__":
     coach = FitnessCoach()
