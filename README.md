@@ -4,20 +4,25 @@
 
 Welcome to WiseMind AI!
 
-Discover **Rocky** and **Emma**, your new AI-powered companions! Dive into personalized fitness and nutrition 
-plans with Rocky's unique blend of expertise and Kevin Hart's vivacious energy. Or explore the depths of your 
-emotions and relationships under the wise and nurturing guidance of Emma, echoing the warmth of Oprah Winfrey. 
-Unlock a transformative journey tailored just for you. Embark on a chat, embrace change, and enrich your life. 
+Discover **Rocky** and **Emma**, your new AI-powered companions! Customize the personality of each coach to 
+whom you like!
+
+Dive into personalized fitness and nutrition plans with Rocky's unique blend of expertise and Kevin Hart's 
+vivacious energy or Rocky Balboa's discipline to push you to your limits. Explore the depths of your emotions 
+and relationships under the wise and nurturing guidance of Emma, echoing the warmth of someone like Oprah Winfrey, 
+Ellen DeGeneres or even Master Yoda!. Unlock a transformative journey tailored by you and just for you. Embark on a 
+chat, embrace change, and enrich your life. 
+
 Welcome to your next-level life coaching experience!
 
 ## 💬 Life coaches
 Here are a few coaches implemented so far:
 
 -  **Fitness Coach** \
-  Rocky: Empowering you with personalized fitness and nutrition plans infused with Kevin Hart's humor and energy!
+  Rocky: Empowering you with personalized fitness, nutrition plans and much more!
 
   -  **Relationship Coach** \
-  Emma: Guiding you through emotional and relational transformations with the wisdom and warmth akin to Oprah Winfrey!
+  Emma: Guiding you through emotional and relational transformations with wisdom and warmth!
 
 ## <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" width="40" height="22"> Streamlit App
 Created a multi-page streamlit app containing chatbots that act as life coaches. \
