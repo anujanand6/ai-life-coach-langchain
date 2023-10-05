@@ -7,7 +7,7 @@ from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
 from config import OPENAI_MODEL_CONFIG
-from promptTemplates import fitness_template
+from prompt_templates import format_system_prompt, coach_personas
 
 st.set_page_config(page_title="Fitness Coach", page_icon="🏃🏽")
 st.header('Fitness Coach')
@@ -17,12 +17,14 @@ st.write('[![view source code ](https://img.shields.io/badge/view_source_code-gr
 class FitnessCoach:
 
     def __init__(self):
+        self.coach_type = 'fitness'
         utils.configure_openai_api_key()
         self.openai_model = OPENAI_MODEL_CONFIG['model_name']
         self.temp = OPENAI_MODEL_CONFIG['temperature']
+        self.persona_options = coach_personas[self.coach_type]
     
     @st.cache_resource
-    def setup_chain(_self):
+    def setup_chain(_self, _prompt_template):
         memory = ConversationBufferMemory()
         llm = ChatOpenAI(
             model_name=_self.openai_model, 
@@ -31,15 +33,23 @@ class FitnessCoach:
             )
         chain = ConversationChain(
             llm=llm, 
-            prompt=fitness_template, 
+            prompt=_prompt_template, 
             memory=memory, 
             verbose=True
             )
         return chain
     
+    def get_coach_persona(self):
+        self.selected_persona = st.selectbox('Choose your coach persona', self.persona_options, index=None)
+        return self.selected_persona
+    
+    def generate_system_prompt(self):
+        self.prompt_template = format_system_prompt(self.coach_type, self.selected_persona)
+        pass
+    
     @utils.enable_chat_history
     def main(self):
-        chain = self.setup_chain()
+        chain = self.setup_chain(self.prompt_template)
         user_query = st.chat_input(placeholder="Ask me anything related to fitness or nutrition!")
         if user_query:
             utils.display_msg(user_query, 'user')
@@ -50,4 +60,8 @@ class FitnessCoach:
 
 if __name__ == "__main__":
     obj = FitnessCoach()
-    obj.main()
+    persona = obj.get_coach_persona()
+    if persona:
+        st.write('Selected persona:', persona)
+        obj.generate_system_prompt()
+        obj.main()
