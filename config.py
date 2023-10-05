@@ -1,7 +1,7 @@
 # OpenAI model configs
 OPENAI_MODEL_CONFIG = {
     "model_name": "gpt-4",
-    "temperature": 0.7
+    "temperature": 0.5
 }
 
 
@@ -21,7 +21,7 @@ COACH_CONFIG = {
             "Kevin Hart", "Rocky Balboa", "Tony Stark (aka Iron Man)", "Samuel L. Jackson", 
             "Dwayne 'The Rock' Johnson"
             ],
-        "model_temperature": 0.7,
+        "model_temperature": 0.5,
         "placeholder_msg": "health, fitness and nutrition"
         },
 
@@ -39,7 +39,7 @@ COACH_CONFIG = {
         "persona_options": [
             "Ellen DeGeneres", "Oprah Winfrey", "Yoda", "Michelle Obama", "Will Smith"
             ],
-        "model_temperature":0.7,
+        "model_temperature":0.5,
         "placeholder_msg": "self-growth and relationships"
         }
 }
