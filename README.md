@@ -17,8 +17,8 @@ Here are a few coaches implemented so far:
   Rocky: Empowering you with personalized fitness, nutrition plans and much more!
 
   -  **Relationship Coach** \
-  Emma: Guiding you through emotional and relational transformations with the wisdom and warmth akin to Oprah Winfrey!
-
+  Emma: Guiding you through emotional and relational transformations with wisdom and warmth!
+  
 ## <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" width="40" height="22"> Streamlit App
 Created a multi-page streamlit app containing chatbots that act as life coaches. \
 You can access this app through this link: [wisemind.streamlit.app](https://wisemind.streamlit.app/)
