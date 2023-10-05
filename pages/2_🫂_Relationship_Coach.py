@@ -6,8 +6,8 @@ from langchain.chat_models import ChatOpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
-from config import OPENAI_MODEL_CONFIG
-from prompt_templates import format_system_prompt, coach_personas
+from config import OPENAI_MODEL_CONFIG, COACH_CONFIG
+from prompt_templates import format_system_prompt
 
 st.set_page_config(page_title="Relationship Coach", page_icon="🫂")
 st.header('Relationship Coach')
@@ -17,11 +17,11 @@ st.write('[![view source code ](https://img.shields.io/badge/view_source_code-gr
 class RelationshipCoach:
 
     def __init__(self):
-        self.coach_type = 'relationship'
+        self.coach_type = 'relationship_coach'
         utils.configure_openai_api_key()
         self.openai_model = OPENAI_MODEL_CONFIG['model_name']
         self.temp = OPENAI_MODEL_CONFIG['temperature']
-        self.persona_options = coach_personas[self.coach_type]
+        self.persona_options = COACH_CONFIG[self.coach_type]['persona_options']
     
     @st.cache_resource
     def setup_chain(_self, _prompt_template):
