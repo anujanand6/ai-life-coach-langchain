@@ -14,7 +14,7 @@ class RelationshipCoach(BaseCoachModel):
         
     @utils.enable_chat_history
     def run(self):
-        chain = self._setup_chain(self.prompt_template)
+        chain = self._setup_chain()
         user_query = st.chat_input(placeholder=f"Ask me anything related to {self._get_placeholder_msg()}!")
         if user_query:
             utils.display_msg(user_query, "user")
