@@ -1,6 +1,11 @@
 import os
 import streamlit as st
 
+# TODO: Add comments and docstrings
+# TODO: Create career/wealth coach
+# TODO: Add next steps to docs
+# TODO: Add How to use page
+
 # Decorator
 def enable_chat_history(func):
     if os.environ.get("OPENAI_API_KEY"):
@@ -21,7 +26,7 @@ def enable_chat_history(func):
         # Display chat history on ui
         if "messages" not in st.session_state:
             display_welcome_msg()
-
+        # FIXME: Display chat history in ui
         for msg in st.session_state["messages"]:
             st.chat_message(msg["role"]).write(msg["content"])
 
@@ -36,6 +41,7 @@ def display_msg(msg, author):
         msg (str): message to display
         author (str): author of the message -user/assistant
     """
+    # TODO: Figure out why this throws keyerror after refresh 
     # Temporary fix for "messages" key error (after refresh)
     if "messages" not in st.session_state:
         display_welcome_msg()
