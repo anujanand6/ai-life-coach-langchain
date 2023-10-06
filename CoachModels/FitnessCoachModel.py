@@ -9,6 +9,9 @@ from langchain.memory import ConversationBufferMemory
 from config import OPENAI_MODEL_CONFIG, COACH_CONFIG
 from prompt_templates import format_system_prompt
 
+# TODO: Create BaseCoachModel
+# TODO: Cache resources for each user
+# TODO: Add capability for user to add personas and traits
 
 class FitnessCoach:
     def __init__(self):
