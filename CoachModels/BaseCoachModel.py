@@ -9,10 +9,13 @@ from langchain.memory import ConversationBufferMemory
 from config import OPENAI_MODEL_CONFIG, COACH_CONFIG
 from prompt_templates import format_system_prompt
 
+# TODO: Create BaseCoachModel
+# TODO: Cache resources for each user
+# TODO: Add capability for user to add personas and traits
 
-class RelationshipCoach:
-    def __init__(self):
-            self.coach_type = "relationship_coach"
+class BaseCoachModel:
+    def __init__(self, coach_type):
+            self.coach_type = coach_type
             utils.configure_openai_api_key()
             self.openai_model = OPENAI_MODEL_CONFIG['model_name']
             self.temp = COACH_CONFIG[self.coach_type]['model_temperature']
@@ -34,7 +37,7 @@ class RelationshipCoach:
         
     def get_coach_persona(self):
         self.selected_persona = st.selectbox(
-            "Before we begin, please choose the persona of the coach from the options given below. \
+            "Before we begin, please choose the persona of the coach from the options given. \
                 Once chosen, the persona cannot be modified.", 
             self.get_persona_options(), 
             index=None
@@ -51,13 +54,13 @@ class RelationshipCoach:
         self.prompt_template = format_system_prompt(self.coach_type, self.selected_persona)
         pass
 
-    @utils.enable_chat_history
-    def main(self):
-        chain = self.setup_chain(self.prompt_template)
-        user_query = st.chat_input(placeholder=f"Ask me anything related to {self.get_placeholder_msg()}!")
-        if user_query:
-            utils.display_msg(user_query, 'user')
-            with st.chat_message("assistant"):
-                st_cb = StreamHandler(st.empty())
-                response = chain.run(user_query, callbacks=[st_cb])
-                st.session_state.messages.append({"role": "assistant", "content": response})
+    # @utils.enable_chat_history
+    # def main(self):
+    #     chain = self.setup_chain(self.prompt_template)
+    #     user_query = st.chat_input(placeholder=f"Ask me anything related to {self.get_placeholder_msg()}!")
+    #     if user_query:
+    #         utils.display_msg(user_query, 'user')
+    #         with st.chat_message("assistant"):
+    #             st_cb = StreamHandler(st.empty())
+    #             response = chain.run(user_query, callbacks=[st_cb])
+    #             st.session_state.messages.append({"role": "assistant", "content": response})
