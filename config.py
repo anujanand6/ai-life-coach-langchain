@@ -9,6 +9,7 @@ OPENAI_MODEL_CONFIG = {
 COACH_CONFIG = {
     # Configurations for fitness coach
     "fitness_coach": {
+        "model_temperature": 0.5,
         "name": "Rocky",
         "type": "fitness",
         "role": "health, fitness and nutrition coach",
@@ -21,12 +22,12 @@ COACH_CONFIG = {
             "Kevin Hart", "Rocky Balboa", "Tony Stark (aka Iron Man)", "Samuel L. Jackson", 
             "Dwayne 'The Rock' Johnson"
             ],
-        "model_temperature": 0.5,
         "placeholder_msg": "health, fitness and nutrition"
         },
 
     # Configurations for relationship coach
     "relationship_coach": {
+        "model_temperature": 0.5,
         "name": "Emma",
         "type": "relationship",
         "role": "relationship counselor",
@@ -37,9 +38,8 @@ COACH_CONFIG = {
         "default_personality_traits": "empathetic and understanding",
         "default_persona": "Oprah Winfrey",
         "persona_options": [
-            "Ellen DeGeneres", "Oprah Winfrey", "Yoda", "Michelle Obama", "Will Smith"
+            "Ellen DeGeneres", "Oprah Winfrey", "Master Yoda", "Michelle Obama", "Will Smith"
             ],
-        "model_temperature":0.5,
         "placeholder_msg": "self-growth and relationships"
         }
 }
