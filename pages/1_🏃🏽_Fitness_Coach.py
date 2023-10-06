@@ -14,7 +14,7 @@ class FitnessCoach(BaseCoachModel):
 
     @utils.enable_chat_history
     def run(self):
-        chain = self._setup_chain(self.prompt_template)
+        chain = self._setup_chain()
         user_query = st.chat_input(placeholder=f"Ask me anything related to {self._get_placeholder_msg()}!")
         if user_query:
             utils.display_msg(user_query, "user")
@@ -30,3 +30,11 @@ if __name__ == "__main__":
         st.write("Your coach persona:", persona)
         coach.generate_system_prompt()
         coach.run()
+
+    # coach = FitnessCoach()
+    # if "persona" not in st.session_state:
+    #     coach.get_coach_persona()
+    # if st.session_state.persona:
+    #     st.write("Your coach persona:", st.session_state.persona)
+    #     coach.generate_system_prompt()
+    #     coach.run()

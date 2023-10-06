@@ -10,6 +10,7 @@ from config import OPENAI_MODEL_CONFIG, COACH_CONFIG
 from prompt_templates import format_system_prompt
 
 # TODO: Cache resources for each user
+# TODO: Stop repeating persona selection msg
 # TODO: Add capability for user to add personas and traits
 
 class BaseCoachModel:
@@ -19,27 +20,28 @@ class BaseCoachModel:
             self.openai_model = OPENAI_MODEL_CONFIG['model_name']
             self.temp = COACH_CONFIG[self.coach_type]['model_temperature']
     
-    def _setup_chain(_self, _prompt_template):
+    def _setup_chain(self):
         memory = ConversationBufferMemory()
         llm = ChatOpenAI(
-            model_name=_self.openai_model, 
-            temperature=_self.temp, 
+            model_name=self.openai_model, 
+            temperature=self.temp, 
             streaming=True
             )
         chain = ConversationChain(
             llm=llm, 
-            prompt=_prompt_template, 
+            prompt=self.prompt_template, 
             memory=memory, 
             verbose=True
             )
         return chain
-        
+    
     def get_coach_persona(self):
         self.selected_persona = st.selectbox(
             "Before we begin, please choose the persona of the coach from the options given. \
                 Once chosen, the persona cannot be modified.", 
             self._get_persona_options(), 
-            index=None
+            index=None,
+            key="persona"
             )
         return self.selected_persona
     
