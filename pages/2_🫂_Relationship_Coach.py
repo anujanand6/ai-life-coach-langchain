@@ -13,7 +13,7 @@ class RelationshipCoach(BaseCoachModel):
         super().__init__(self.coach_type)
         
     @utils.enable_chat_history
-    def main(self):
+    def run(self):
         chain = self.setup_chain(self.prompt_template)
         user_query = st.chat_input(placeholder=f"Ask me anything related to {self.get_placeholder_msg()}!")
         if user_query:
@@ -29,4 +29,4 @@ if __name__ == "__main__":
     if persona:
         st.write("Your coach persona:", persona)
         coach.generate_system_prompt()
-        coach.main()
+        coach.run()

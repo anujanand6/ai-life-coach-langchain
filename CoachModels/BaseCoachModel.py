@@ -54,13 +54,5 @@ class BaseCoachModel:
         self.prompt_template = format_system_prompt(self.coach_type, self.selected_persona)
         pass
 
-    # @utils.enable_chat_history
-    # def main(self):
-    #     chain = self.setup_chain(self.prompt_template)
-    #     user_query = st.chat_input(placeholder=f"Ask me anything related to {self.get_placeholder_msg()}!")
-    #     if user_query:
-    #         utils.display_msg(user_query, 'user')
-    #         with st.chat_message("assistant"):
-    #             st_cb = StreamHandler(st.empty())
-    #             response = chain.run(user_query, callbacks=[st_cb])
-    #             st.session_state.messages.append({"role": "assistant", "content": response})
+    def run(self):
+      pass
