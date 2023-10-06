@@ -31,10 +31,3 @@ if __name__ == "__main__":
         coach.generate_system_prompt()
         coach.run()
 
-    # coach = FitnessCoach()
-    # if "persona" not in st.session_state:
-    #     coach.get_coach_persona()
-    # if st.session_state.persona:
-    #     st.write("Your coach persona:", st.session_state.persona)
-    #     coach.generate_system_prompt()
-    #     coach.run()
