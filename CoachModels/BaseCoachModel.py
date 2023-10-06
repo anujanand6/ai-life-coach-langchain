@@ -20,7 +20,7 @@ class BaseCoachModel:
             self.openai_model = OPENAI_MODEL_CONFIG['model_name']
             self.temp = COACH_CONFIG[self.coach_type]['model_temperature']
     
-    def setup_chain(_self, _prompt_template):
+    def _setup_chain(_self, _prompt_template):
         memory = ConversationBufferMemory()
         llm = ChatOpenAI(
             model_name=_self.openai_model, 
@@ -39,20 +39,20 @@ class BaseCoachModel:
         self.selected_persona = st.selectbox(
             "Before we begin, please choose the persona of the coach from the options given. \
                 Once chosen, the persona cannot be modified.", 
-            self.get_persona_options(), 
+            self._get_persona_options(), 
             index=None
             )
         return self.selected_persona
-
-    def get_persona_options(self):
-        return COACH_CONFIG[self.coach_type]['persona_options']
-
-    def get_placeholder_msg(self):
-        return COACH_CONFIG[self.coach_type]['placeholder_msg']
-
+    
     def generate_system_prompt(self):
         self.prompt_template = format_system_prompt(self.coach_type, self.selected_persona)
         pass
+
+    def _get_persona_options(self):
+        return COACH_CONFIG[self.coach_type]['persona_options']
+
+    def _get_placeholder_msg(self):
+        return COACH_CONFIG[self.coach_type]['placeholder_msg']
 
     def run(self):
       pass
